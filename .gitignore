@@ -1,0 +1,6 @@
+.DS_Store
+node_modules
+/dist/
+public
+examples/sapper-app-template-web3/package-lock.json
+examples/svelte-app-template-web3/package-lock.json

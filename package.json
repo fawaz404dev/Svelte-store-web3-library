@@ -1,0 +1,73 @@
+{
+  "name": "svelte-web3",
+  "version": "3.5.2",
+  "description": "web3.js as a collection of stores for Svelte, Sapper or SvelteKit.",
+  "license": "MIT",
+  "repository": "clbrge/svelte-web3",
+  "author": {
+    "name": "Christophe Le Bars",
+    "email": "<clb@toort.net>"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "svelte": "src/stores.js",
+  "types": "dist/svelte-web3.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "main": "./dist/index.js",
+      "module": "./dist/index.mjs",
+      "svelte": "./src/stores.js",
+      "types": "./dist/svelte-web3.d.ts"
+    },
+    "./components": {
+      "import": "./src/components/index.js",
+      "svelte": "./src/components/index.js"
+    }
+  },
+  "scripts": {
+    "update-chains": "node ./scripts/update-chains.mjs",
+    "lint": "prettier-standard --lint 'src/**/*.js'",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "svelte": "^3.0.0",
+    "svelte-proxied-store": "^1.1.4"
+  },
+  "devDependencies": {
+    "eslint-plugin-svelte3": "^4.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier-standard": "^16.4.1",
+    "release-it": "^15.3.0",
+    "rollup": "^2.77.2",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-svelte": "^7.1.0",
+    "svelte": "^3.49.0",
+    "web3": "1.7.5"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier-standard --lint"
+    ]
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "sveltekit",
+    "svelte",
+    "sapper",
+    "ethereum",
+    "web3",
+    "store"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ]
+}
